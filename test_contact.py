@@ -2,7 +2,8 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-class Contact(unittest.TestCase):
+
+class Test_Contact(unittest.TestCase):
     MENIU = (By.XPATH, "/html/body/div[2]/aside/div[2]/div[2]/div[2]/a[2]")
     CONTACT = (By.XPATH, '//*[@id="menu_11"]/li[8]/a')
 
@@ -15,7 +16,7 @@ class Contact(unittest.TestCase):
     def tearDown(self) -> None:
         self.chrome.quit()
 
-    def test_Contact(self):
+    def test_contact(self):
         self.chrome.find_element(*self.MENIU).click()
         self.chrome.find_element(*self.CONTACT).click()
         assert "Contact" in self.chrome.title, "Expected 'Contact' in page title after clicking on Contact link"

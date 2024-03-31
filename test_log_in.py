@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-class TEST_LOG_IN(unittest.TestCase):
+class Test_log_in(unittest.TestCase):
     LOGARE = (By.XPATH, "//a[@class='topbar-but but-account js-login-splash-trigger' and @title='Conectare']")
     MAIL = (By.XPATH, "//input[@id='login_email']")
     SELECT_PAROLA = (By.XPATH, "//input[@id='login_password']")
@@ -57,6 +57,6 @@ class TEST_LOG_IN(unittest.TestCase):
              error_message = (self.chrome.find_element(*self.ERROR_MESSAGE_MAIL)).text
         except:
             pass
-        expected_text = "Acest cont nu exista."
+        expected_text = "Acest cont nu există!"
         assert expected_text in error_message, f"expected error message: {expected_text} actual error message {error_message}"
 

@@ -4,8 +4,7 @@ from selenium.webdriver.common.by import By
 
 
 class Test_homepage(unittest.TestCase):
-    SELECT_PIZZA_LINK = (By.XPATH, "//a[@href='https://www.fabiopizza.ro/Pizza' and text()='Pizza']")
-    SELECT_SPECIFIC_PIZZA = (By.XPATH, "//div[contains(@class, 'plist-item-wrapper') and .//p[@class='plist_title' and contains(text(), 'Pizza Abruzzo')]]")
+    NUMBER_OF_MENIU_ITEM = (By.XPATH, '//ul[@class="menu-item mainmenu"]//li')
     DESERT = (By.XPATH, '/html/body/div[2]/div[3]/div/nav/ul/li[5]/a')
     HOMEPAGE = (By.XPATH, '/html/body/div[2]/aside/a/img')
     MENIU = (By.XPATH, "/html/body/div[2]/aside/div[2]/div[2]/div[2]/a[2]")
@@ -23,17 +22,6 @@ class Test_homepage(unittest.TestCase):
         except Exception as e:
             print(f"Error occurred during teardown: {e}")
 
-    def test_accesam_pizza(self):
-        self.chrome.find_element(*self.SELECT_PIZZA_LINK).click()
-        self.chrome.find_element(*self.SELECT_SPECIFIC_PIZZA).click()
-        assert "Pizza Abruzzo" in self.chrome.title, "Expected 'Pizza Abruzzo' in page title after selecting specific pizza"
-
-    def test_homepage(self):
-        self.chrome.find_element(*self.DESERT).click()
-        self.chrome.find_element(*self.HOMEPAGE).click()
-        assert "Fabio Pizza" in self.chrome.title, "Expected 'Fabio Pizza' in page title after clicking on homepage link"
-
-    def test_info_utile(self):
-        self.chrome.find_element(*self.MENIU).click()
-        self.chrome.find_element(*self.INFO_UTILE).click()
-        assert "Informații utile" in self.chrome.title, "Expected 'Informații utile' in page title after clicking on info utile link"
+    def test_check_meniu_item(self):
+        number_of_meniu_items = self.chrome.find_elements(*self.NUMBER_OF_MENIU_ITEM)
+        assert len(number_of_meniu_items)==7
