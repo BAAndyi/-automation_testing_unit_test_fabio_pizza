@@ -3,12 +3,12 @@ import unittest
 import HtmlTestRunner
 
 from test_categorie_combo import Categorie_combo
-from test_contact import Contact
+from test_contact import Test_Contact
 from test_homepage import Test_homepage
 from test_log_in import Test_log_in
 from test_scoatem_ingredient import Test_scoatem_ingredient
 from test_search import Test_search
-from test_shopping_cart import Test_shopping_cart
+from test_search import Test_shopping_cart
 
 
 
@@ -18,7 +18,7 @@ class TestSuite(unittest.TestCase):
                 teste_de_rulat = unittest.TestSuite()
                 teste_de_rulat.addTests([
                 unittest.defaultTestLoader.loadTestsFromTestCase(Categorie_combo),
-                unittest.defaultTestLoader.loadTestsFromTestCase(Contact),
+                unittest.defaultTestLoader.loadTestsFromTestCase(Test_Contact),
                 unittest.defaultTestLoader.loadTestsFromTestCase(Test_homepage),
                 unittest.defaultTestLoader.loadTestsFromTestCase(Test_log_in),
                 unittest.defaultTestLoader.loadTestsFromTestCase(Test_scoatem_ingredient),
