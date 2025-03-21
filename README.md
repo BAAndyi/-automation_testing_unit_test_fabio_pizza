@@ -1,5 +1,5 @@
 # Automation project
-The Automation project is a test automation project built using Python and Selenium WebDriver. It includes automated test scripts for various scenarios on the website http//www.fabiopizza.ro The tests cover functionalities such as user authentication, product search, navigation, and redirection to external sites like YouTube and Facebook.
+The Automation project is a test automation project built using Python and Selenium WebDriver. It includes automated test scripts for various scenarios on the website https://www.fabiopizza.ro The tests cover functionalities such as user authentication, product search, navigation, and redirection to external sites like YouTube and Facebook.
 
 ## Key Features:
 - Utilizes Python and Selenium WebDriver for automated testing.
